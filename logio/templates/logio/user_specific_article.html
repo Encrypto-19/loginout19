@@ -1,0 +1,18 @@
+{% extends 'logio/base.html' %}
+
+{% block title %}
+Username's specific article
+{% endblock %}
+
+
+{% block body %}
+
+<!-- <img src="{{article.article_image.image.url}}" alt="image here" width="100px" height="100px">  does not display image-->
+<img src="{{article.article_image.url}}" alt="image here" width="100%" height="100%"> 
+<h1>{{article.article_title}}</h1>
+<h6>by {{article.article_author}}</h6>
+
+<p>
+    {{article.article_body}}
+</p>
+{% endblock %}
