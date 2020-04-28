@@ -10,8 +10,7 @@ from .models import Content
 # Create your views here.
 
 def logio_index(request):
-    articles = Content.objects.all()
-    return render(request, 'logio/logio_index.html', {'articles':articles})
+    return render(request, 'homepage.html')
 
 
 def login(request):
@@ -26,7 +25,7 @@ def login(request):
             messages.info(request, 'Invalid Credentials')
             return redirect('login')
     else:
-        return render(request, 'logio/login.html')
+        return render(request,'login.html')
 
 
 def register(request):
@@ -56,7 +55,7 @@ def register(request):
 
 
     else:
-        return render(request, 'logio/register.html')
+        return render(request, 'register.html')
 
 
 def logout(request):
@@ -85,7 +84,7 @@ def submit_article(request):#works when user makes a new article(POST) or user o
         return redirect('logio_index')
     
     else:
-        return render(request, 'logio/submit_article.html')
+        return render(request, 'submit_article.html')
 
 
 def user_all_article(request):
@@ -95,9 +94,16 @@ def user_all_article(request):
         if i.article_author == my_name:
             my_work.append(i)
     print(my_work)
-    return render(request, 'logio/user_all_article.html', {'my_work':my_work})
+    return render(request, 'user_all_article.html', {'my_work':my_work})
 
 
 def user_specific_article(request, article_id):
     article = Content.objects.filter(id = article_id)
-    return render(request, 'logio/user_specific_article.html', {'article':article[0]})
+    return render(request, 'user_specific_article.html', {'article':article})
+
+
+def all_article(request):
+    all_art = Content.objects.all()
+    print(all_art)
+    # print(all_art[0].article_image)
+    return render(request, 'all_art.html', {'all_art':all_art})

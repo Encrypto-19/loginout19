@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^logout/$', views.logout, name="logout"),
     url(r'^submit_article/$', views.submit_article, name = 'submit_article'),
     url(r'^user_all_article/$', views.user_all_article, name = 'user_all_article'),
-    url(r'^user_specific_article/([0-9]+)$', views.user_specific_article, name = 'user_specific_article'),
+    # url(r'^user_specific_article/([0-9]+)$', views.user_specific_article, name = 'user_specific_article'),
+    # url(r'^user_specific_article/$', views.user_specific_article, name = 'user_specific_article'),
+    url(r'^view_all/$', views.all_article, name='all_article'),
 ]

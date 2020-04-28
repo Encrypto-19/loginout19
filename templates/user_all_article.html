@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+{% if my_work|length == 0 %}
+  <div class="blank_space"></div>
+  <h3>You havent added any articles yet!!!!!!!!!!</h3>
+{% else %}
+<div class="container-fluid">
+  <div class="row">
+    {%for work in my_work%}
+    <div class="col-lg-4 col-md-6 col-sm-12 ">
+      <div class="card m-5 card_attr">
+        <img class="card-img-top" src="{{work.article_image.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">
+              {{work.article_title}}
+          </h5>
+          <p class="card-text">
+            {{work.article_description}}
+          </p>
+        </div>
+        <div class="card-body">
+          <p class="card-link">{{work.article_author  }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+
+<div class="blank_space"></div>
+{% endblock %}

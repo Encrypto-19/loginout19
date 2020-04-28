@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% static 'images' as baseUrl %}
+
+
+{% block content %}
+
+<div class="blank_space"></div>
+
+{% if all_art|length  == 0 %}
+<h6>Content not present</h6>
+{% else %}
+{% for art in all_art %}
+<div class="container article_single">
+    <div class="row">
+        <div class="col-sm-12 col-md-5 col-lg-5 bg-dark p-0">
+            <img src="{{art.article_image.url}}" alt="image here" class="img-fluid">
+        </div>
+        <div class="col-sm-12 col-md-7 col-lg-7 bg-primary p-0">
+            <div class="text-center">
+                <div class="BA_text_title  text-center">
+                    <p id="font_small2">
+                            {{art.article_title}}
+                    </p>
+                </div>
+                <div class="BA_text_p text-center pb-1" id="fadeshow2">
+                    <hr style="margin-left: 30px; margin-right: 30px;">
+                    {{art.article_description}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+{% endfor %}
+{% endif %}
+
+
+<div class="blank_space"></div>
+
+{%endblock%}
