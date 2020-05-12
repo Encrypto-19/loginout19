@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container align-content-center">
+    <img src="{{article.article_image_link}}" alt="image here" class="img-fluid">
+    <h3>{{article.article_title}}</h3>
+    <h6>{{article.article_description}}</h6>
+    <h6>Author: {{article.article_author}}</h6>
+    <p>
+        {{article.article_body}}
+    </p>
+</div>
+
+
+{% endblock %}

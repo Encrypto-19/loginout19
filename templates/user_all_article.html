@@ -18,7 +18,7 @@
         <img class="card-img-top" src="{{work.article_image_link}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">
-              {{work.article_title}}
+              <a href="{% url 'user_specific_article' art.id %}">{{work.article_title}}</a>
           </h5>
           <p class="card-text">
             {{work.article_description}}

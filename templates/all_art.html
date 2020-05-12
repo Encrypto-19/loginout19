@@ -19,11 +19,11 @@
         <div class="col-sm-12 col-md-5 col-lg-5 bg-dark p-0">
             <img src="{{art.article_image_link}}" alt="image here" class="img-fluid">
         </div>
-        <div class="col-sm-12 col-md-7 col-lg-7 bg-primary p-0">
-            <div class="text-center">
+        <div class="col-sm-12 col-md-7 col-lg-7 p-0">
+            <div class="text-center article_single_text">
                 <div class="BA_text_title  text-center">
                     <p id="font_small2">
-                            {{art.article_title}}
+                        <a href="{% url 'user_specific_article' art.id %}">{{art.article_title}}</a> 
                     </p>
                 </div>
                 <div class="BA_text_p text-center pb-1" id="fadeshow2">

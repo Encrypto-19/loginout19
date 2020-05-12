@@ -100,7 +100,10 @@ def user_all_article(request):
 
 def user_specific_article(request, article_id):
     article = Content.objects.filter(id = article_id)
-    return render(request, 'user_specific_article.html', {'article':article})
+    print(article)
+    return render(request, 'article.html', {'article':article[0]})
+    # return render(request, 'homepage.html')
+
 
 
 def all_article(request):
