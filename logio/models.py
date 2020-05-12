@@ -8,7 +8,7 @@ class Content(models.Model):
     article_description = models.TextField()
     article_body = models.TextField()
     article_author = models.CharField(max_length = 50)
-    article_image = models.ImageField(upload_to = 'pics', null=True, blank=True)
+    article_image_link = models.TextField()
     article_likes = models.PositiveIntegerField(default=0)
 
     def __str__(self):

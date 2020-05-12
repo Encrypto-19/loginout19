@@ -8,13 +8,16 @@
 <div class="blank_space"></div>
 
 {% if all_art|length  == 0 %}
-<h6>Content not present here</h6>
+<div class="container text-center">
+    <h6>Content not present here</h6>
+</div>
+
 {% else %}
 {% for art in all_art %}
 <div class="container article_single">
     <div class="row">
         <div class="col-sm-12 col-md-5 col-lg-5 bg-dark p-0">
-            <img src="{{art.article_image.url}}" alt="image here" class="img-fluid">
+            <img src="{{art.article_image_link}}" alt="image here" class="img-fluid">
         </div>
         <div class="col-sm-12 col-md-7 col-lg-7 bg-primary p-0">
             <div class="text-center">

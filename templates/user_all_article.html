@@ -6,14 +6,16 @@
 {% block content %}
 {% if my_work|length == 0 %}
   <div class="blank_space"></div>
-  <h3>You havent added any articles yet!!!!!!!!!!</h3>
+  <div class="container text-center">
+    <h3>You haven't added any articles yet!!!!!!!!!!</h3>
+  </div>
 {% else %}
 <div class="container-fluid">
   <div class="row">
     {%for work in my_work%}
     <div class="col-lg-4 col-md-6 col-sm-12 ">
       <div class="card m-5 card_attr">
-        <img class="card-img-top" src="{{work.article_image.url}}" alt="Card image cap">
+        <img class="card-img-top" src="{{work.article_image_link}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">
               {{work.article_title}}
@@ -23,7 +25,7 @@
           </p>
         </div>
         <div class="card-body">
-          <p class="card-link">{{work.article_author  }}</p>
+          <p class="card-link text-right">by {{work.article_author}}</p>
         </div>
       </div>
     </div>

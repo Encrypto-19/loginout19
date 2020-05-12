@@ -214,7 +214,11 @@ footer .column i + i {
 }
 
 .article_single{
-  box-shadow: 1px 2px 50px 0px rgba(65, 157, 219, 0.349);
+  box-shadow: 1px 2px 50px 0px rgba(6, 37, 58, 0.349);
+}
+
+.article_single img{
+  margin: auto;
 }
 
 

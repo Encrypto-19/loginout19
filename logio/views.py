@@ -67,19 +67,20 @@ def submit_article(request):#works when user makes a new article(POST) or user o
     
     if request.method == 'POST':
         a_title = request.POST['article_title']
-        a_content = request.POST['article_content']
+        a_description = request.POST['article_description']
         a_body = request.POST['article_body']
         # a_image = request.POST['article_image'] #results in MultiValueDictKeyError at /submit_article/
-        a_image = request.FILES['article_image']
+        a_image_link = request.POST['article_image_link']
         a_author = request.user
         print('user = ' + str(a_author))
         print('content added title '+str(a_title)+' by : '+str(a_author))
         new_article = Content()
         new_article.article_title = str(a_title)
-        new_article.article_content = str(a_content)
-        new_article.article_author = str(a_author)
+        # new_article.article_content = str(a_content)
+        new_article.article_description = str(a_description)
         new_article.article_body = str(a_body)
-        new_article.article_image = a_image
+        new_article.article_author = str(a_author)
+        new_article.article_image_link = str(a_image_link)
         new_article.save()
         return redirect('logio_index')
     
